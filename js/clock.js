@@ -34,5 +34,6 @@ document.addEventListener('keydown', e => {
     window.open(`http://www.google.com/search?q=${search.value}`);
     search.value = '';
   }
+  search.onfocus = preventDefault();
   search.focus();
 })
