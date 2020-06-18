@@ -22,18 +22,18 @@ function salute() {
   } else if (now.getHours() >= 12 && now.getHours() < 18) {
     welcome.innerHTML = 'Good afternoon.';
   } else {
-    welcome.innerHTML = 'Good afternoon.';
+    welcome.innerHTML = 'Good night.';
   }
 }
-
-runClock();
-salute();
 
 document.addEventListener('keydown', e => {
   if (e.key == "Enter") {
     window.open(`http://www.google.com/search?q=${search.value}`);
     search.value = '';
   }
-  search.onfocus = preventDefault();
   search.focus();
 })
+
+runClock();
+salute();
+
