@@ -12,6 +12,7 @@ function runClock() {
   secondHand.style.transform = `rotate(${now.getSeconds() * 6 + (now.getMilliseconds() / (1000 / 6))}deg)`;
   setTimeout(() => {
     requestAnimationFrame(runClock);
+    salute();
   }, 1000);
 }
 
