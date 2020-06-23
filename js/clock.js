@@ -11,8 +11,8 @@ function runClock() {
   minuteHand.style.transform = `rotate(${now.getMinutes() * 6 + (now.getSeconds() / 10)}deg)`;
   secondHand.style.transform = `rotate(${now.getSeconds() * 6 + (now.getMilliseconds() / (1000 / 6))}deg)`;
   setTimeout(() => {
-    requestAnimationFrame(runClock);
     salute();
+    requestAnimationFrame(runClock);
   }, 1000);
 }
 
