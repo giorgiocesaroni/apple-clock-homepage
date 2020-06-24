@@ -27,14 +27,21 @@ function salute() {
   }
 }
 
+// REGEX for websites
+let urlFormat = /(https?:\/\/)?(\w+\.)?(\w+\.\w+)/;
+
 document.addEventListener('keydown', e => {
   if (e.key == "Enter") {
-    window.open(`http://www.google.com/search?q=${search.value}`);
-    search.value = '';
+    if (urlFormat.test(search.value)) {
+      let address = urlFormat.exec(search.value)[3];
+      window.open(`https://${address}`);
+    } else {
+      window.open(`https://duckduckgo.com/?q=${search.value}`);
+      search.value = '';
+    }
   }
   search.focus();
 })
 
 runClock();
 salute();
-
