@@ -37,8 +37,8 @@ document.addEventListener('keydown', e => {
       window.open(`https://${address}`);
     } else {
       window.open(`https://duckduckgo.com/?q=${search.value}`);
-      search.value = '';
     }
+    search.value = '';
   }
   search.focus();
 })
