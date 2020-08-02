@@ -25,7 +25,7 @@ function salute() {
   } else {
     welcome.innerHTML = 'Good evening.';
   }
-  document.title = `${now.getHours()}:${now.getMinutes()}`
+  document.title = `${now.getHours()}:${String(now.getMinutes()).padStart(2, '0')}`
 }
 
 // REGEX for websites
