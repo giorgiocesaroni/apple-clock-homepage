@@ -23,8 +23,9 @@ function salute() {
   } else if (now.getHours() >= 12 && now.getHours() < 18) {
     welcome.innerHTML = 'Good afternoon.';
   } else {
-    welcome.innerHTML = 'Good night.';
+    welcome.innerHTML = 'Good evening.';
   }
+  document.title = `${now.getHours()}:${now.getMinutes()}`
 }
 
 // REGEX for websites
