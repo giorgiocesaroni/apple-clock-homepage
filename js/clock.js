@@ -1,3 +1,4 @@
+const clockFace = document.getElementById('clock-face');
 const hourHand = document.getElementById('hour-hand');
 const minuteHand = document.getElementById('minute-hand');
 const secondHand = document.getElementById('second-hand');
@@ -43,6 +44,35 @@ document.addEventListener('keydown', e => {
   }
   search.focus();
 })
+
+function darkMode() {
+  clockFace.src = './png/clock-face-dark.png';
+  hourHand.src = './png/hour-hand-dark.png';
+  minuteHand.src = './png/minute-hand-dark.png';
+  secondHand.src = './png/second-hand-dark.png';
+}
+
+function lightMode() {
+  clockFace.src = './png/clock-face.png';
+  hourHand.src = './png/hour-hand.png';
+  minuteHand.src = './png/minute-hand.png';
+  secondHand.src = './png/second-hand.png';
+}
+
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  darkMode();
+} else {
+  lightMode();
+}
+
+window.matchMedia('(prefers-color-scheme: dark)')
+  .addEventListener('change', event => {
+    if (event.matches) {
+      darkMode();
+    } else {
+      lightMode();
+    }
+  });
 
 runClock();
 salute();

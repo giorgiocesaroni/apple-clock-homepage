@@ -90,3 +90,18 @@ input {
     font-size: 1.5rem;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background: rgb(20, 20, 20);
+  }
+
+  h1 {
+    color: grey
+  }
+
+  input {
+    background: none;
+    font-weight: 600;
+  }
+}
