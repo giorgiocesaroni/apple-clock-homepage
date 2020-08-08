@@ -12,6 +12,11 @@ function runClock() {
   minuteHand.style.transform = `rotate(${now.getMinutes() * 6 + (now.getSeconds() / 10)}deg)`;
   secondHand.style.transform = `rotate(${now.getSeconds() * 6 + (now.getMilliseconds() / (1000 / 6))}deg)`;
   setTimeout(() => {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      darkMode();
+    } else {
+      lightMode();
+    }
     salute();
     requestAnimationFrame(runClock);
   }, 1000);
@@ -58,21 +63,6 @@ function lightMode() {
   minuteHand.src = './png/minute-hand.png';
   secondHand.src = './png/second-hand.png';
 }
-
-if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  darkMode();
-} else {
-  lightMode();
-}
-
-window.matchMedia('(prefers-color-scheme: dark)')
-  .addEventListener('change', event => {
-    if (event.matches) {
-      darkMode();
-    } else {
-      lightMode();
-    }
-  });
 
 runClock();
 salute();

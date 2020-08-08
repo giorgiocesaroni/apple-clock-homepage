@@ -18,7 +18,7 @@ body {
   display: flex;
   flex-flow: column;
   align-items: center;
-  margin: 2rem 0;
+  margin: 10vh 0;
 }
 
 .clock-container {
@@ -36,23 +36,25 @@ img {
 }
 
 h1 {
+  font-size: 2.2rem;
   display: inline-block;
-  margin-bottom: .35rem;
+  margin-bottom: .5rem;
 }
 
 h1,
 input {
-  font-size: 2.2rem;
   text-align: center;
   color: #004d99;
 }
 
-input {
-  border-radius: .5rem;
+#search {
+  font-family: inherit;
+  font-weight: 500;
+  border-radius: 10px;
   font-size: 1.1rem;
   color: grey;
   margin: 0;
-  padding: .15rem;
+  padding: .25rem;
   border: none;
   caret-color: transparent;
   outline: none;
@@ -100,8 +102,7 @@ input {
     color: grey
   }
 
-  input {
-    background: none;
-    font-weight: 600;
+  #search {
+    background: #222;
   }
 }
